@@ -35,6 +35,7 @@ public class app {
 
             if(n%2==0) {
                 b.setHP(b.getHP() - (Artagnan.getInteligent() + Artagnan.getStrength()) * Artagnan.getDame());
+
                 if(b.getHP()<=0){
                     int quantity= (int)Math.floor(Math.random()*(5)+1);
 
@@ -47,7 +48,16 @@ public class app {
                 Artagnan.setHP(
                         Artagnan.getHP()-((b.getInteligent()+b.getStrength())*b.getDame()+b.getDameBonus())
                 );
+
+                if(Artagnan.getHP()>=0){
+                    int quantity= (int)Math.floor(Math.random()*(5)+1);
+
+                    for (int i=0;i<quantity;i++){
+                        coins.add(new Coin());
+                    }
+                }
             }
+
             Artagnan.setHP(100);
         }
 
